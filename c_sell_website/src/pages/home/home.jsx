@@ -1,4 +1,5 @@
 import './home.styles.scss';
+import Counter from '../../components/common/counter/counter';
 
 const Home = () => {
     return (
@@ -10,9 +11,8 @@ const Home = () => {
                     <span>AND STAND OUT FROM THE CROWD</span>
                     <button >EXPLORE</button>
                 </div>
-                <div className='about-contaienr'>
-                </div>
             </div>
+                    <Counter/>
         </div>
     )
 };
