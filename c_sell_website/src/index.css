@@ -16,19 +16,3 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
-body {
-    margin: 0;
-    display: flex;
-    width: 100%;
-    min-height: 100vh;
-    color: black;
-    flex-direction: column;
-    font-family: 'Exo', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-}
-
-/* logo and important text */
-h1 {
-    font-family: 'Black Ops One', serif;
-    font-weight: 400;
-    font-style: normal;
-}
