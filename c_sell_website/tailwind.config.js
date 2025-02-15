@@ -4,8 +4,8 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                blackOps: ["Black Ops One", "cursive"], // Custom font for h1
-                exo: ["Exo", "sans-serif"], // Default font
+                blackOps: ["Black Ops One", "cursive"], 
+                exo: ["Exo", "sans-serif"], 
             },
         },
     },
