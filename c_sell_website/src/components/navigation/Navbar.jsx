@@ -16,7 +16,7 @@ const Navigation = () => {
 
             {/* Navigation Menu */}
             <nav
-                className={`fixed top-0 right-0 h-screen w-[250px] bg-transparent text-gray-300 p-4 box-border transition-transform duration-300 ease-in-out z-[1000] flex flex-col items-center ${isOpen ? "translate-x-0" : "translate-x-[150%]"
+                className={`fixed top-0 right-0 h-screen w-[250px] bg-transparent justify-center text-gray-300 p-4 box-border transition-transform duration-300 ease-in-out z-[1000] flex flex-col items-center ${isOpen ? "translate-x-0" : "translate-x-[150%]"
                     }`}
             >
                 <div className="flex flex-col items-center">
