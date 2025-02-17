@@ -16,7 +16,7 @@ const ProductCards = ({cards}) => {
             <div className="p-5">
                 <h2 className="text-lg font-semibold text-gray-900">{title}</h2>
                 <p className="text-sm text-gray-600">{description}</p>
-                <p className="mt-2 text-xl font-bold text-red-500">{price}</p>
+                <p className="mt-2 text-xl font-bold text-slate-600">{price}</p>
             </div>
         </div>
     );

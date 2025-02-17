@@ -1,5 +1,12 @@
+import Banner from "../../components/common/banner.jsx";
+
 const Order = () => {
-    return <h1> Order Page</h1>
+    return (
+    <div className="order-page-container">
+    <Banner page_title={"Orders"}/>
+    </div>
+
+    )
 };
 
 export default Order;

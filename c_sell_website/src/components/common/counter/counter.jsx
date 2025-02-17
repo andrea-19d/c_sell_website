@@ -3,7 +3,7 @@ import CounterTextElement from "./counter-elements";
 
 const counterData = [
     { id: 1, title: "+100 mil", subtitle: "Happy users" },
-    { id: 2, title: "+60 mil", subtitle: "In return" },
+    { id: 2, title: "+60 mil", subtitle: "In revenue" },
     { id: 3, title: "+25 K", subtitle: "Employees in despair" },
 ];
 

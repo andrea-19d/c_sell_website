@@ -1,5 +1,13 @@
+import Banner from "../../components/common/banner.jsx";
+
 const About = () => {
-    return <h1> About Page</h1>
+    return (
+        <div className="about-page-container">
+
+            <Banner page_title={"About Us"}/>
+
+        </div>
+    )
 };
 
 export default About;

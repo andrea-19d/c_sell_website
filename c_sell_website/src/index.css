@@ -14,10 +14,12 @@
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    -ms-high-contrast-adjust: none;
 }
 
 @media (forced-colors: active) {
-    /* Your styles for Forced Colors Mode */
+    :root {
+        color: -ms-high-contrast-adjusted-color;
+        background-color: -ms-high-contrast-adjusted-background-color;
+    }
 }
 

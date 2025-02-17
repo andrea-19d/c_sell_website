@@ -1,6 +1,8 @@
 ﻿import ProductCards from "./product-cards";
 
-const ProductCardsList = () => {
+// eslint-disable-next-line react/prop-types
+const ProductCardsList = ({ displayCount }) => {
+    // Temporarily using hardcoded data until connected to a database
     const products = [
         {
             id: 1,
@@ -21,14 +23,14 @@ const ProductCardsList = () => {
             title: "Ford Mustang 1967",
             description: "An iconic car with a timeless design and strong performance.",
             price: "$55,000",
-            imageURL: "/src/assets/product-images/aut-22-bk0439-01p.jpg", 
+            imageURL: "/src/assets/product-images/aut-23-rk3385-01p.jpg",
         },
         {
             id: 4,
             title: "Ford Mustang 1967",
             description: "An iconic car with a timeless design and strong performance.",
             price: "$55,000",
-            imageURL: "/src/assets/product-images/aut-23-rk3385-01p.jpg", 
+            imageURL: "/src/assets/product-images/aut-23-rk3385-01p.jpg",
         },
         {
             id: 5,
@@ -39,9 +41,12 @@ const ProductCardsList = () => {
         },
     ];
 
+    // Slice the products array to only include the first `displayCount` items
+    const displayedProducts = products.slice(0, displayCount);
+
     return (
         <div className="flex flex-wrap justify-center gap-6 p-6">
-            {products.map((product) => (
+            {displayedProducts.map((product) => (
                 <ProductCards key={product.id} cards={product} />
             ))}
         </div>

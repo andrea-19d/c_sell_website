@@ -1,9 +1,8 @@
+// eslint-disable-next-line react/prop-types
 const TextBanner = ({ text }) => {
     return (
-        <div className="whitespace-pre-line flex flex-col items-center justify-center text-center text-5xl">
-            {text.map((line, index) => (
-                <p key={index}>{line}</p>
-            ))}
+        <div className="text-balance flex flex-col items-center justify-center text-center text-5xl">
+            <p className="w-[75vh]">{text}</p>
         </div>
     );
 };
