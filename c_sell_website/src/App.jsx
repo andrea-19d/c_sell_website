@@ -2,6 +2,8 @@ import { lazy, Suspense } from 'react';
 import { Routes, Route } from 'react-router';
 import Navigation from './components/navigation/Navbar';
 import Footer from "./components/common/footer.jsx";
+import Signup from "./pages/sign-up/signup.jsx";
+import SignIn from "./pages/sign-in/signin.jsx";
 
 const Home = lazy(() => import('./pages/home/home'));
 const About = lazy(() => import('./pages/about/about'));
@@ -18,6 +20,8 @@ const App = () => {
                     <Route path='about' element={<About />} />
                     <Route path='contact' element={<Contact />} />
                     <Route path='order' element={<Order />} />
+                    <Route path='signin' element={<SignIn />} />
+                    <Route path='signup' element={<Signup />} />
                 </Route>
             </Routes>
             <Footer/>

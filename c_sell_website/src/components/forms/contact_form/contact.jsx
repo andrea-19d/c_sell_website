@@ -29,20 +29,37 @@ const ContactForm = () => {
                         <Form.Item
                             name="name"
                             label={<span className="text-white">Name</span>}
+                            required={false}
                             rules={[{ required: true, message: 'Please input your full name!' }]}
                         >
-                            <Input placeholder="Your name" />
+                            <Input
+                                placeholder="Your name"
+                                className="!bg-neutral-900/60 !backdrop-blur-lg !border-b !border-white !text-white !placeholder-white
+                                !focus:outline-none !focus:!border-neutral-50"
+                                style={{
+                                    borderLeft: "none",
+                                    borderRight: "none",
+                                    borderTop: "none",
+                                }}/>
                         </Form.Item>
 
                         <Form.Item
                             name="email"
                             label={<span className="text-white">Email</span>}
+                            required={false}
                             rules={[
                                 { required: true, message: 'Please input your email!' },
                                 { type: 'email', message: 'Please input a valid email!' },
                             ]}
                         >
-                            <Input placeholder="Your email" />
+                            <Input placeholder="Your email"
+                                   className="!bg-neutral-900/60 !backdrop-blur-lg !border-b !border-white !text-white !placeholder-white
+                                !focus:outline-none !focus:border-neutral-400"
+                                   style={{
+                                       borderLeft: "none",
+                                       borderRight: "none",
+                                       borderTop: "none",
+                                   }}/>
                         </Form.Item>
 
                         <Form.Item
@@ -50,7 +67,19 @@ const ContactForm = () => {
                             label={<span className="text-white">Message</span>}
                             rules={[{ required: false, message: 'Please input your message!' }]}
                         >
-                            <Input.TextArea placeholder="Your message" rows={4} />
+                            <Input.TextArea
+                                placeholder="Your message"
+                                rows={4}
+                                className="!bg-neutral-900/60 !backdrop-blur-lg !border-b !border-white !text-white !placeholder-white
+                                !focus:outline-none !focus:border-neutral-400"
+                                style={{
+                                    borderLeft: "none",
+                                    borderRight: "none",
+                                    borderTop: "none",
+                                }}
+                            />
+
+
                         </Form.Item>
 
                         <Form.Item>

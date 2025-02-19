@@ -18,7 +18,7 @@ const Navigation = () => {
             <nav
                 className={`fixed top-0 right-0 h-screen w-[250px] bg-neutral-900/40 backdrop-blur-lg 
                 justify-center text-neutral-50 p-4 box-border transition-transform duration-300 ease-in-out z-[1000] 
-                flex flex-col items-center ${isOpen ? "translate-x-0" : "translate-x-[150%]"
+                flex flex-col items-center default: isOpen ${isOpen ? "translate-x-0" : "translate-x-[150%]"
                 }`}
             >
                 <div className="flex flex-col items-center">
@@ -33,6 +33,12 @@ const Navigation = () => {
                     </Link>
                     <Link to="/order" className="mb-4 text-xl hover:text-gray-400 hover:underline">
                         Order
+                    </Link>
+                    <Link to="/SignIn" className="mb-4 text-xl hover:text-gray-400 hover:underline">
+                        Sign in
+                    </Link>
+                    <Link to="/SignUp" className="mb-4 text-xl hover:text-gray-400 hover:underline">
+                        Sign up
                     </Link>
                 </div>
             </nav>
