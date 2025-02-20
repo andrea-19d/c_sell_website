@@ -9,7 +9,7 @@ const Contact = () => {
                 <img
                     src="/src/assets/4.jpg"
                     alt="image"
-                    className="w-[35%] h-auto rounded-lg shadow-md"
+                    className="w-[50%] h-auto rounded-lg shadow-md"
                 />
                 <ContactForm />
             </div>

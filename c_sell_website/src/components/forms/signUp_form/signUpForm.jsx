@@ -5,18 +5,16 @@ import { createUserDocumentFromAuth, signInWithGooglePopup, registerWithEmailPas
 
 const SignUpForm = () => {
     const [form] = Form.useForm();
-    const [isFormVisible, setIsFormVisible] = useState(true); // State to control form visibility
+    const [isFormVisible, setIsFormVisible] = useState(true);
 
     const handleSubmit = async (values) => {
         const { email, password, name } = values;
         try {
-            // Handle form submission for email/password authentication
-            const userCredential = await registerWithEmailPassword(email, password);
 
-            // Create or update the user document in Firestore
-            await createUserDocumentFromAuth(userCredential.user);
+            const userCredential = await registerWithEmailPassword(email, password, name);
 
-            // Display success message and hide the form
+            await createUserDocumentFromAuth(userCredential.user, { displayName: name });
+
             message.success('You have successfully signed up!');
             console.log(values);
             setIsFormVisible(false);
@@ -26,12 +24,11 @@ const SignUpForm = () => {
         }
     };
 
+
     const handleGoogleSignIn = async () => {
         try {
-            // Sign in the user with Google Popup
             const { user } = await signInWithGooglePopup();
 
-            // Create or update the user document in Firestore
             await createUserDocumentFromAuth(user);
 
             console.log("User signed in and document created:", user);
@@ -41,7 +38,7 @@ const SignUpForm = () => {
     };
 
     return (
-        <div className="min-w-[60%] min-h-[471px] flex items-center justify-center" style={{ backgroundImage: CONTACT_BG }}>
+        <div className="min-w-[60%] flex justify-center" style={{ backgroundImage: CONTACT_BG }}>
             <div className="w-[400px] justify-center content-center">
                 {isFormVisible ? (
                     <Form
@@ -58,7 +55,6 @@ const SignUpForm = () => {
                             rules={[{ required: true, message: 'Please input your full name!' }]}
                         >
                             <Input
-                                placeholder="Your name"
                                 className="!bg-neutral-900/60 !backdrop-blur-lg !border-b !border-white !text-white !placeholder-white
                                 !focus:outline-none !focus:!border-neutral-50"
                                 style={{
@@ -79,8 +75,7 @@ const SignUpForm = () => {
                             ]}
                         >
                             <Input
-                                placeholder="Your email"
-                                className="!bg-neutral-900/60 !backdrop-blur-lg !border-b !border-white !text-white !placeholder-white
+                                className="!bg-neutral-900/60 !backdrop-blur-lg !border-b !text-l !border-white !text-white !placeholder-white
                                 !focus:outline-none !focus:border-neutral-400"
                                 style={{
                                     borderLeft: "none",
@@ -97,10 +92,10 @@ const SignUpForm = () => {
                             rules={[{ required: true, message: 'Please input your password!' }]}
                         >
                             <Input.Password
-                                placeholder="Your password"
-                                className="!bg-neutral-900/60 !backdrop-blur-lg !border-b !border-white !text-white !placeholder-white
+                                className="!bg-neutral-900/60 !backdrop-blur-lg !text-sm !text-white !border-b !border-white  !placeholder-white
                                 !focus:outline-none !focus:border-neutral-400"
                                 style={{
+                                    color: "#fff",
                                     borderLeft: "none",
                                     borderRight: "none",
                                     borderTop: "none",
@@ -125,8 +120,7 @@ const SignUpForm = () => {
                             ]}
                         >
                             <Input.Password
-                                placeholder="Confirm your password"
-                                className="!bg-neutral-900/60 !backdrop-blur-lg !border-b !border-white !text-white !placeholder-white
+                                className="!bg-neutral-900/60 !backdrop-blur-lg !text-sm !border-b !border-white !text-white !placeholder-white
                                 !focus:outline-none !focus:border-neutral-400"
                                 style={{
                                     borderLeft: "none",
@@ -142,8 +136,9 @@ const SignUpForm = () => {
                                 <Button
                                     type="primary"
                                     htmlType="submit"
+                                    onClick={handleSubmit}
                                     block
-                                    className="!h-[50px] !text-neutral-50 !bg-neutral-900 !border-2 !border-gray-500 !text-xl !cursor-pointer hover:!bg-neutral-200 hover:!text-neutral-900 hover:!border-neutral-950 transition-all"
+                                    className="!h-[50px] !w-[50%] !text-neutral-50 !bg-neutral-900 !border-2 !border-gray-500 !text-sm !cursor-pointer hover:!bg-neutral-200 hover:!text-neutral-900 hover:!border-neutral-950 transition-all"
                                 >
                                     Sign Up
                                 </Button>
@@ -153,7 +148,7 @@ const SignUpForm = () => {
                                     type="default"
                                     block
                                     onClick={handleGoogleSignIn}
-                                    className="!h-[50px] !text-neutral-50 !bg-neutral-700 !border-2 !border-gray-500 !text-xl !cursor-pointer hover:!bg-neutral-200 hover:!text-neutral-900 hover:!border-neutral-950 transition-all"
+                                    className="!h-[50px] !w-[50%] !text-neutral-50 !bg-neutral-700 !border-2 !border-gray-500 !text-sm !cursor-pointer hover:!bg-neutral-200 hover:!text-neutral-900 hover:!border-neutral-950 transition-all"
                                     style={{ width: 'auto', flexGrow: 0 }}
                                 >
                                     Sign Up with Google

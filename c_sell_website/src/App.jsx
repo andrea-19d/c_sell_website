@@ -1,5 +1,5 @@
 import { lazy, Suspense } from 'react';
-import { Routes, Route } from 'react-router';
+import {Routes, Route, useLocation} from 'react-router';
 import Navigation from './components/navigation/Navbar';
 import Footer from "./components/common/footer.jsx";
 import Signup from "./pages/sign-up/signup.jsx";
@@ -11,6 +11,13 @@ const Contact = lazy(() => import('./pages/contact/contact'));
 const Order = lazy(() => import('./pages/order/order'));
 
 const App = () => {
+
+    const location = useLocation();
+
+    const hiddenFooterPaths = ['/SignIn', '/SignUp'];
+
+    const shouldShowFooter = !hiddenFooterPaths.includes(location.pathname);
+
     return (
         <Suspense fallback={<div>Loading...</div>}>
             <Routes>
@@ -24,7 +31,7 @@ const App = () => {
                     <Route path='signup' element={<Signup />} />
                 </Route>
             </Routes>
-            <Footer/>
+            { shouldShowFooter && <Footer/>}
         </Suspense>
     );
 };

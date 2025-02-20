@@ -3,6 +3,7 @@
 // eslint-disable-next-line react/prop-types
 const ProductCardsList = ({ displayCount }) => {
     // Temporarily using hardcoded data until connected to a database
+    // and creating an admin
     const products = [
         {
             id: 1,

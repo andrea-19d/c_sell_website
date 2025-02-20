@@ -4,20 +4,18 @@ import { CONTACT_BG } from "../../constants/constants.jsx";
 
 const ContactForm = () => {
     const [form] = Form.useForm();
-    const [isFormVisible, setIsFormVisible] = useState(true); // State to control form visibility
+    const [isFormVisible, setIsFormVisible] = useState(true);
 
     const handleSubmit = (values) => {
-        // Handle form submission
         message.success('Your message has been sent!');
         console.log(values);
 
-        // Hide the form after successful submission
         setIsFormVisible(false);
     };
 
     return (
-        <div className=" min-w-[60%] min-h-[471px] flex items-center justify-center" style={{ backgroundImage: CONTACT_BG }}>
-            <div className="w-[400px] justify-center content-center">
+        <div className=" min-w-[40%] min-h-[471px] flex items-center justify-center" style={{ backgroundImage: CONTACT_BG }}>
+            <div className="w-[500px] justify-center content-center">
                 {isFormVisible ? (
                     <Form
                         form={form}
@@ -28,13 +26,13 @@ const ContactForm = () => {
                     >
                         <Form.Item
                             name="name"
-                            label={<span className="text-white">Name</span>}
+                            label={<span className="text-white text-sm">Name</span>}
                             required={false}
                             rules={[{ required: true, message: 'Please input your full name!' }]}
                         >
                             <Input
                                 placeholder="Your name"
-                                className="!bg-neutral-900/60 !backdrop-blur-lg !border-b !border-white !text-white !placeholder-white
+                                className="!bg-neutral-900/60 !backdrop-blur-lg !text-sm !border-b !border-white !text-white !placeholder-white
                                 !focus:outline-none !focus:!border-neutral-50"
                                 style={{
                                     borderLeft: "none",
@@ -45,7 +43,7 @@ const ContactForm = () => {
 
                         <Form.Item
                             name="email"
-                            label={<span className="text-white">Email</span>}
+                            label={<span className="text-white text-sm">Email</span>}
                             required={false}
                             rules={[
                                 { required: true, message: 'Please input your email!' },
@@ -53,7 +51,7 @@ const ContactForm = () => {
                             ]}
                         >
                             <Input placeholder="Your email"
-                                   className="!bg-neutral-900/60 !backdrop-blur-lg !border-b !border-white !text-white !placeholder-white
+                                   className="!bg-neutral-900/60 !backdrop-blur-lg !text-sm !border-b !border-white !text-white !placeholder-white
                                 !focus:outline-none !focus:border-neutral-400"
                                    style={{
                                        borderLeft: "none",
@@ -64,13 +62,13 @@ const ContactForm = () => {
 
                         <Form.Item
                             name="message"
-                            label={<span className="text-white">Message</span>}
+                            label={<span className="text-white text-sm">Message</span>}
                             rules={[{ required: false, message: 'Please input your message!' }]}
                         >
                             <Input.TextArea
                                 placeholder="Your message"
                                 rows={4}
-                                className="!bg-neutral-900/60 !backdrop-blur-lg !border-b !border-white !text-white !placeholder-white
+                                className="!bg-neutral-900/60 !backdrop-blur-lg !text-sm !border-b !border-white !text-white !placeholder-white
                                 !focus:outline-none !focus:border-neutral-400"
                                 style={{
                                     borderLeft: "none",
@@ -87,7 +85,7 @@ const ContactForm = () => {
                                 type="primary"
                                 htmlType="submit"
                                 block
-                                className="!h-[50px] !text-neutral-50 !bg-neutral-900 !border-2 !border-gray-500 !text-xl !cursor-pointer hover:!bg-neutral-200 hover:!text-neutral-900 hover:!border-neutral-950 transition-all"
+                                className="!h-[50px] !text-neutral-50 !bg-neutral-900 !border-2 !border-gray-500 !text-sm !cursor-pointer hover:!bg-neutral-200 hover:!text-neutral-900 hover:!border-neutral-950 transition-all"
                             >
                                 Send Message
                             </Button>
