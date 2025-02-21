@@ -1,4 +1,4 @@
-import Banner from "../../components/common/banner.jsx";
+import Banner from "../../components/shared/banner/banner";
 
 const About = () => {
     return (

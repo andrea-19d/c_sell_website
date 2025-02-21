@@ -1,7 +1,7 @@
-import Button from "../common/Button";
-import TextBanner from "../common/text_banner";
-import {BANNER_BG} from "../constants/constants";
-import {LOGO_ICON} from "../constants/icons.jsx";
+import TextBanner from "../common/textBanner";
+import {BANNER_BG} from "../shared/constants";
+import {LOGO_ICON} from "../shared/icons/logoIcon.js";
+import CustomButton from "../common/button";
 
 
 const BannerHome = () => {
@@ -19,7 +19,7 @@ const BannerHome = () => {
             </div>
 
             {/* Explore Button */}
-            <Button text="EXPLORE" to="/#"/>
+            {/*<CustomButton text="EXPLORE"/>*/}
         </div>
     );
 };

@@ -1,14 +1,14 @@
 import { lazy, Suspense } from 'react';
 import {Routes, Route, useLocation} from 'react-router';
-import Navigation from './components/navigation/Navbar';
-import Footer from "./components/common/footer.jsx";
-import Signup from "./pages/sign-up/signup.jsx";
-import SignIn from "./pages/sign-in/signin.jsx";
+import Navigation from './components/navigation/navbar.js';
+import Footer from "./components/common/footer.tsx";
+import Signup from "./pages/sign-up/signup.tsx";
+import SignIn from "./pages/signIn/signIn.tsx";
 
-const Home = lazy(() => import('./pages/home/home'));
-const About = lazy(() => import('./pages/about/about'));
-const Contact = lazy(() => import('./pages/contact/contact'));
-const Order = lazy(() => import('./pages/order/order'));
+const Home = lazy(() => import('./pages/home/home.js'));
+const About = lazy(() => import('./pages/about/about.js'));
+const Contact = lazy(() => import('./pages/contact/contact.js'));
+const Order = lazy(() => import('./pages/order/order.js'));
 
 const App = () => {
 

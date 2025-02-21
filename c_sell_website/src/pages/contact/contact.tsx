@@ -1,5 +1,5 @@
-import Banner from "../../components/common/banner.jsx";
-import ContactForm from "../../components/forms/contact_form/contact.jsx";
+import Banner from "../../components/shared/banner/banner";
+import ContactForm from "../../components/forms/contactForm/contact";
 
 const Contact = () => {
     return (

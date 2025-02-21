@@ -1,5 +1,8 @@
-import {FOOTER_BG} from "../constants/constants.jsx";
-import {APP_STORE_ICON, LINKEDIN_ICON, TIK_TOK_ICON, X_LOGO_ICON} from "../constants/icons.jsx";
+import {FOOTER_BG} from "../shared/constants.js";
+import {APP_STORE_ICON} from "../shared/icons/appStoreIcon.js";
+import {X_LOGO_ICON} from "../shared/icons/xLogoIcon.js";
+import {LINKEDIN_ICON} from "../shared/icons/linkedinIcon.js";
+import {TIK_TOK_ICON} from "../shared/icons/tikTokIcon.js";
 
 const Footer = () => {
     const currentYear = new Date().getFullYear();

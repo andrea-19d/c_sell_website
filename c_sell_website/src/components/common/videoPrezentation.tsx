@@ -1,4 +1,4 @@
-import { WHITE_TO_BLACK } from "../constants/constants.jsx";
+import { WHITE_TO_BLACK } from "../shared/constants.js";
 
 const VideoPrezentation = () => {
     return (

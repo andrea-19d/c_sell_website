@@ -1,6 +1,6 @@
 import { Form, Input, Button, message } from 'antd';
 import { useState } from 'react'; // Import useState hook
-import { CONTACT_BG } from "../../constants/constants.jsx";
+import { CONTACT_BG } from "../../shared/constants.js";
 
 const ContactForm = () => {
     const [form] = Form.useForm();

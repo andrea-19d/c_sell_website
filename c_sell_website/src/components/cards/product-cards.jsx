@@ -1,4 +1,4 @@
-import Button from "../common/Button";
+import Button from "../common/button.js";
 
 // eslint-disable-next-line react/prop-types
 const ProductCards = ({cards}) => {

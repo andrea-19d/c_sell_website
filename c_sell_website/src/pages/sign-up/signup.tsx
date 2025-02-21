@@ -1,5 +1,6 @@
-import SignUpForm from "../../components/forms/signUp_form/signUpForm.jsx";
-import Banner from "../../components/common/banner.jsx";
+import SignUpForm from "../../components/forms/signUpForm/signUpForm";
+import Banner from "../../components/shared/banner/banner";
+
 
 const Signup = () => {
     return (

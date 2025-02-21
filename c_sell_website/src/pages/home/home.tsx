@@ -1,9 +1,9 @@
 import Counter from '../../components/common/counter/counter';
-import BannerHome from '../../components/home/BannerHome.jsx';
+import BannerHome from '../../components/home/bannerHome';
 import ProductCardsList from '../../components/cards/products-list';
-import ContactForm from "../../components/forms/contact_form/contact.jsx";
-import {CONTACT_BG} from "../../components/constants/constants.jsx";
-import VideoPrezentation from "../../components/common/videoPrezentation.jsx";
+import ContactForm from "../../components/forms/contactForm/contact";
+import {CONTACT_BG} from "../../components/shared/constants";
+import VideoPrezentation from "../../components/common/videoPrezentation";
 
 const Home = () => {
     return (

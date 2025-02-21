@@ -1,4 +1,4 @@
-﻿import { COUNTER_BG } from "../../constants/constants";
+﻿import { COUNTER_BG } from "../../shared/constants";
 import CounterTextElement from "./counter-elements";
 
 const counterData = [

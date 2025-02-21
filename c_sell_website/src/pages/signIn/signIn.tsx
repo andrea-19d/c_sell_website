@@ -1,5 +1,5 @@
-import Banner from "../../components/common/banner.jsx";
-import SignInForm from "../../components/forms/signIn_form/signInForm.jsx";
+import Banner from "../../components/shared/banner/banner";
+import SignInForm from "../../components/forms/signInForm/signInForm";
 
 const SignIn = () => {
     return (
@@ -19,10 +19,6 @@ const SignIn = () => {
                         }}
                     />
                 </div>
-
-
-
-
                 <SignInForm/>
             </div>
         </div>

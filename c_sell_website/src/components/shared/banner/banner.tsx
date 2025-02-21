@@ -1,6 +1,6 @@
-import TextBanner from "../common/text_banner";
-import {BANNER_BG} from "../constants/constants";
-import {LOGO_ICON} from "../constants/icons.jsx";
+import TextBanner from "../../common/textBanner";
+import {BANNER_BG} from "../constants";
+import {LOGO_ICON} from "../icons/logoIcon";
 
 
 const Banner = ({page_title}) => {
