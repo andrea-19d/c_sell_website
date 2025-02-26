@@ -1,7 +1,7 @@
-import TextBanner from "../common/textBanner";
-import {BANNER_BG} from "../shared/constants";
-import {LOGO_ICON} from "../shared/icons/logoIcon.js";
-import CustomButton from "../common/button";
+import TextBanner from "./textBanner";
+import {BANNER_BG} from "../constants";
+import {LOGO_ICON} from "../icons/logoIcon";
+import CustomButton from "../../common/button";
 
 
 const BannerHome = () => {
@@ -15,7 +15,7 @@ const BannerHome = () => {
             {/* Text BannerHome */}
 
             <div className="my-[7%]">
-                <TextBanner text={"BUILD YOUR DREAM AND STAND OUT FROM THE CROWD"} />
+                <TextBanner page_title={"BUILD YOUR DREAM AND STAND OUT FROM THE CROWD"} />
             </div>
 
             {/* Explore Button */}

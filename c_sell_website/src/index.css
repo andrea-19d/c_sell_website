@@ -18,8 +18,7 @@
 
 @media (forced-colors: active) {
     :root {
-        color: -ms-high-contrast-adjusted-color;
-        background-color: -ms-high-contrast-adjusted-background-color;
+
     }
 }
 

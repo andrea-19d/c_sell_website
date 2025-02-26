@@ -1,4 +1,4 @@
-export const APP_STORE_ICON = ({width, height, fill_color}) => {
+export const APP_STORE_ICON = ({width, height, fill_color}: IconProps) => {
     return (
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width={width} height={height}>
             <path

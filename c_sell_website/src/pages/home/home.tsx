@@ -1,11 +1,12 @@
 import Counter from '../../components/common/counter/counter';
-import BannerHome from '../../components/home/bannerHome';
+import BannerHome from '../../components/shared/banner/bannerHome';
 import ProductCardsList from '../../components/cards/products-list';
 import ContactForm from "../../components/forms/contactForm/contact";
 import {CONTACT_BG} from "../../components/shared/constants";
 import VideoPrezentation from "../../components/common/videoPrezentation";
 
 const Home = () => {
+    console.log('Home page rendered');
     return (
         <div className="home-page-container">
             <BannerHome/>

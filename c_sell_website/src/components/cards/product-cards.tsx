@@ -1,8 +1,7 @@
-import Button from "../common/button.js";
+import Button from "../common/button";
 
-// eslint-disable-next-line react/prop-types
+// @ts-ignore
 const ProductCards = ({cards}) => {
-    // eslint-disable-next-line react/prop-types
     const {title, description, price, imageURL} = cards;
 
     return (
@@ -11,7 +10,7 @@ const ProductCards = ({cards}) => {
                         justify-center content-center">
             <img src={imageURL} alt={title} className=" bg-cover"/>
             <div className="p-5 mt-[24px] justify-self-center content-center ">
-                <Button  text="BUY"/>
+                <Button text="BUY" onClick={undefined}/>
             </div>
             <div className="p-5">
                 <h2 className="text-lg font-semibold text-gray-900">{title}</h2>

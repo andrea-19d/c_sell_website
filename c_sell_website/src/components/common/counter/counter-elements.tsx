@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 // eslint-disable-next-line react/prop-types
-const CounterTextElement = ({ data }) => {
+const CounterTextElement = ({ data }: {data:any}) => {
     // State to hold the current count for each item, initialized with 0
     const [counts, setCounts] = useState(() =>
         data.reduce((acc, { id }) => ({ ...acc, [id]: 0 }), {})

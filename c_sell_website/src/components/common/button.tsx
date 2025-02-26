@@ -1,5 +1,6 @@
 
-const CustomButton = ({ text, onClick, type = "button" }) => {
+const CustomButton = ({ text, onClick, type = "button" }:
+                      {text?: string, onClick?: any, type?:any}) => {
 
 
     return (

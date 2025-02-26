@@ -1,17 +1,18 @@
 import { Form, Input, Button, message } from "antd";
-import { signInWithEmailPassword, signInWithGooglePopup } from "../../../utils/firebase/firebase.utils.js";
 import { useState } from "react";
 import {CONTACT_BG} from "../../shared/constants.js";
+import {emailPasswordSignIn, signInWithGoogle} from '../../../utils/firebase';
 
 const SignInForm = () => {
     const [form] = Form.useForm();
     const [loading, setLoading] = useState(false);
 
-    const handleSubmit = async (values) => {
-        const { email, password } = values;
+
+    const handleSubmit = async (values : { email: string, password:string, name?:string}) => {
+        const { email, password, name } = values;
         setLoading(true);
         try {
-            const user = await signInWithEmailPassword(email, password);
+            const user = await emailPasswordSignIn(email, password, name);
             message.success(`Welcome back, ${user.email}!`);
         } catch (error) {
             message.error("Error during sign in: " + error.message);
@@ -22,7 +23,7 @@ const SignInForm = () => {
 
     const handleGoogleSignIn = async () => {
         try {
-            const { user } = await signInWithGooglePopup();
+            const  user  = await signInWithGoogle();
             message.success(`Welcome back, ${user.displayName || "User"}!`);
         } catch (error) {
             message.error("Error during Google sign in: " + error.message);

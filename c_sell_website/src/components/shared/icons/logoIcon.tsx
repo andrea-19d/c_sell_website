@@ -1,4 +1,4 @@
-export const LOGO_ICON = ({width}) => {
+    export const LOGO_ICON = ({width}: IconProps) => {
     return (
         <h1 className="absolute top-5 left-1/2 transform -translate-x-1/2 text-4xl z-50">
             <svg width={width} viewBox="0 0 193 32" fill="none" xmlns="http://www.w3.org/2000/svg">

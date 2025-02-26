@@ -1,5 +1,5 @@
-import SignUpForm from "../../components/forms/signUpForm/signUpForm";
 import Banner from "../../components/shared/banner/banner";
+import SignUpForm from "../../components/forms/signUpForm/signUpForm";
 
 
 const Signup = () => {

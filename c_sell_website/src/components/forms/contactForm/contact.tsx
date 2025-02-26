@@ -6,6 +6,7 @@ const ContactForm = () => {
     const [form] = Form.useForm();
     const [isFormVisible, setIsFormVisible] = useState(true);
 
+    // @ts-ignore
     const handleSubmit = (values) => {
         message.success('Your message has been sent!');
         console.log(values);

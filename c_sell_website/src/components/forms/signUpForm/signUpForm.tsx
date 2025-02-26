@@ -1,8 +1,7 @@
 import { Form, Input, Button, message } from 'antd';
-import { useState } from 'react';
-import { User } from 'firebase/auth'; // Import Firebase's User type
+import React, { useState, useContext } from 'react';
 import { CONTACT_BG } from "../../shared/constants";
-import { createUserDocumentFromAuth, signInWithGooglePopup, registerWithEmailPassword } from "../../../utils/firebase/firebase.utils";
+import { emailPasswordSignUp, signInWithGoogle, createUserDocument } from '../../../utils/firebase';
 
 const SignUpForm: React.FC = () => {
     const [form] = Form.useForm();
@@ -11,25 +10,26 @@ const SignUpForm: React.FC = () => {
     const handleSubmit = async (values: { email: string; password: string; name: string }) => {
         const { email, password, name } = values;
         try {
-            const userCredential = await registerWithEmailPassword(email, password, name);
-            await createUserDocumentFromAuth(userCredential.user, { displayName: name });
+            const user = await emailPasswordSignUp(email, password, name);
+
+            await createUserDocument(user, { displayName: name });
+
             message.success('You have successfully signed up!');
             setIsFormVisible(false);
         } catch (error: any) {
-            message.error('Error during sign-up: ' + error.message);
-            console.error(error);
+            message.error(error.message || 'Signup failed');
+            console.error('Signup error:', error);
         }
     };
 
-
     const handleGoogleSignIn = async () => {
         try {
-            const result = await signInWithGooglePopup();
-            const user = result.user as User; // Explicitly cast to User type
-            await createUserDocumentFromAuth(user);
-            console.log("User signed in and document created:", user);
+            const user = await signInWithGoogle();
+            await createUserDocument(user);
+            message.success('Google sign-in successful!');
         } catch (error: any) {
-            console.error("Error during sign in:", error.message);
+            message.error(error.message || 'Google sign-in failed');
+            console.error('Google sign-in error:', error);
         }
     };
 

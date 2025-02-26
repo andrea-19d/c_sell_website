@@ -42,10 +42,6 @@ const Navigation = () => {
                     </Link>
                 </div>
             </nav>
-
-
-            {/* Render current page */}
-            <Outlet />
         </>
     );
 };
